@@ -3,7 +3,9 @@ import "./App.css";
 
 export default function App() {
   const [state, setState] = useState({
-    skills: [{ skill: "JavaScript", level: "4" }]
+    skills: [{ skill: "JavaScript", level: "4" }],
+    skill: "",
+    level: "3"
   });
 
   function handleSubmit() {
