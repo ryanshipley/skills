@@ -4,12 +4,23 @@ import "./App.css";
 export default function App() {
   const [state, setState] = useState({
     skills: [{ skill: "JavaScript", level: "4" }],
-    skill: "JS",
-    level: "3"
+    newSkill: {
+      skill: "",
+      level: "3"
+    }
   });
 
-  function handleSubmit() {
-    alert("ADD SKILL CLICKED");
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newSkill = {
+      skill: state.skill,
+      level: state.level
+    };
+    setState({
+      skills: [...state.skills, newSkill],
+      skill: "",
+      level: "3"
+    });
   }
 
 // Add the onChange event handler
@@ -35,7 +46,7 @@ function handleChange(e) {
         </article>
       ))}
       <hr />
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <span>SKILL</span>
           <input name="skill" value={state.skill}
