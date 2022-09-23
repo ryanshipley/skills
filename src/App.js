@@ -25,11 +25,11 @@ export default function App() {
       <form>
         <label>
           <span>SKILL</span>
-          <input name="skill" />
+          <input name="skill" value={state.skill}/>
         </label>
         <label>
           <span>LEVEL</span>
-          <select name="level">
+          <select name="level" value={state.level}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
