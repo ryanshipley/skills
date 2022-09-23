@@ -4,13 +4,26 @@ import "./App.css";
 export default function App() {
   const [state, setState] = useState({
     skills: [{ skill: "JavaScript", level: "4" }],
-    skill: "",
+    skill: "JS",
     level: "3"
   });
 
   function handleSubmit() {
     alert("ADD SKILL CLICKED");
   }
+
+// Add the onChange event handler
+function handleChange(e) {
+  /* 
+   the setter function 
+   allows us to access previous state 
+   and override it with new values 
+  */
+   setState({
+     ...state,
+     skill: e.target.value
+   });
+ };
 
   return (
     <section>
@@ -25,7 +38,8 @@ export default function App() {
       <form>
         <label>
           <span>SKILL</span>
-          <input name="skill" value={state.skill}/>
+          <input name="skill" value={state.skill}
+          onChange={handleChange}/>
         </label>
         <label>
           <span>LEVEL</span>
