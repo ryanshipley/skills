@@ -21,7 +21,7 @@ function handleChange(e) {
   */
    setState({
      ...state,
-     skill: e.target.value
+    [e.target.name]: e.target.value
    });
  };
 
@@ -43,7 +43,8 @@ function handleChange(e) {
         </label>
         <label>
           <span>LEVEL</span>
-          <select name="level" value={state.level}>
+          <select name="level" value={state.level}
+          onChange={handleChange}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
